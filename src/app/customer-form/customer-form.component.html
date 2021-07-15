@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 class="aaa">Customer</h1>
+
+
+  <div>
+    <span> xin chao: {{customer1.name}}</span>
+  </div>
+
+    <div class="form-group">
+      <label >Name</label>
+      <input type="text" class="form-control" id="" [(ngModel)]="customer1.name" name="cus1_name" required>
+    </div>
+
+    <div class="form-group">
+      <label >Age</label>
+      <input type="text" class="form-control"    [(ngModel)]="customer1.age" name="cus1_age" required>
+    </div>
+
+  <button (click)="tangtuoi()">tang tuoi</button>
+  <button (click)="giamtuoi()">tang tuoi</button>
+
+    <div class="form-group">
+      <label for="job">Job</label>
+      <select class="form-control" id="job" [(ngModel)]="customer1.job" name="cus1_job" required>
+        <option *ngFor="let job of jobList" [value]="job">{{job}}</option>
+      </select>
+
+
+      <div *ngFor="let job of jobList">
+        <li> {{job}}</li>
+      </div>
+    </div>
+
+    <span *ngIf="customer1.age < 18">ban duoi 18t </span><br>
+    <span *ngIf="customer1.age>=18">ban tren 18t, qua gia </span>
+
+</div>
