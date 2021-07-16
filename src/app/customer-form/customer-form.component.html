@@ -3,23 +3,28 @@
 
 
   <div>
-    <span> xin chao: {{customer1.name}}</span>
+    <span> xin chao: {{name}}</span>
+  </div>
+  <div>
+    <span>ban da: {{age}} tuoi</span>
   </div>
 
     <div class="form-group">
       <label >Name</label>
-      <input type="text" class="form-control" id="" [(ngModel)]="customer1.name" name="cus1_name" required>
+      <input type="text" class="form-control" id="" [(ngModel)]="name" name="cus1_name" required>
     </div>
 
     <div class="form-group">
       <label >Age</label>
-      <input type="text" class="form-control"    [(ngModel)]="customer1.age" name="cus1_age" required>
+      <input type="text" class="form-control"    [(ngModel)]="age" name="cus1_age" required>
     </div>
 
   <button (click)="tangtuoi()">tang tuoi</button>
-  <button (click)="giamtuoi()">tang tuoi</button>
+  <button (click)="giamtuoi()">giam tuoi</button>
 
-    <div class="form-group">
+  <!-- <button (click) = "themvaomang()">them vao mang</button> -->
+
+    <!-- <div class="form-group">
       <label for="job">Job</label>
       <select class="form-control" id="job" [(ngModel)]="customer1.job" name="cus1_job" required>
         <option *ngFor="let job of jobList" [value]="job">{{job}}</option>
@@ -29,9 +34,13 @@
       <div *ngFor="let job of jobList">
         <li> {{job}}</li>
       </div>
-    </div>
+    </div> -->
 
-    <span *ngIf="customer1.age < 18">ban duoi 18t </span><br>
-    <span *ngIf="customer1.age>=18">ban tren 18t, qua gia </span>
+    <span *ngIf="age <18; then Tuecondition; else Flasecondition"></span>
+
+    <ng-template #Tuecondition ><span appBold >Bạn dưới 18 tuổi</span></ng-template>
+    <ng-template #Flasecondition ><span>Bạn trên hoặc bằng 18 tuổi</span></ng-template>
+
+
 
 </div>
