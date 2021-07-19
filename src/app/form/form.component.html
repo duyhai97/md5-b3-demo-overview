@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" #formElement = "ngForm">
+  <div class="form-">
+    <label for="name">Name</label>
+    <input type="text"
+           class="form-control"
+           id="name"
+            required="required"
+           [(ngModel)]="name"
+           name="name" >
+
+  </div>
+  <span *ngIf="name ==='' ">* can phai nhap ten </span>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password"
+           class="form-control"
+           id="password" [(ngModel)]="password"
+            name="password">
+  </div>
+  <span *ngIf="password ==='' ">* can phai mat khau </span>
+  <br>
+  <br>
+  <div class="form-control">
+    <label>Job</label> <br>
+    <select (change)="selectJob($event)">
+      <option *ngFor="let job of jobList" [value]="job">{{job}}</option>
+    </select>
+  </div>
+<!--  <label for="job">Job</label>-->
+
+
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

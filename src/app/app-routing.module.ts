@@ -3,12 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { CustomerFormComponent } from './customer-form/customer-form.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {FormComponent} from "./form/form.component";
 
 const routes: Routes = [
   {path:"", component:CustomerFormComponent},
   {path: "customer-form", component: CustomerFormComponent },
   {path: "about", component: AboutComponent},
-  {path: "**", component: PageNotFoundComponent}
+  {path: "form", component: FormComponent},
+  {path: "**", component: PageNotFoundComponent},
+
 ];
 
 @NgModule({
